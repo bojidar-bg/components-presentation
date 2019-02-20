@@ -1,0 +1,119 @@
+[gd_scene format=2]
+
+[node name="settings" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="title" type="Label" parent="."]
+anchor_right = 1.0
+margin_left = 40.0
+margin_top = 40.0
+margin_right = -40.0
+margin_bottom = 80.0
+text = "Settings"
+
+[node name="keys" type="VBoxContainer" parent="."]
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 40.0
+margin_top = 80.0
+margin_right = -20.0
+margin_bottom = -40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="title" type="Label" parent="keys"]
+margin_right = 452.0
+margin_bottom = 14.0
+text = "Keybindings"
+
+[node name="seperator" type="HSeparator" parent="keys"]
+margin_top = 18.0
+margin_right = 452.0
+margin_bottom = 22.0
+
+[node name="jump" type="HBoxContainer" parent="keys"]
+margin_top = 26.0
+margin_right = 452.0
+margin_bottom = 46.0
+
+[node name="label" type="Label" parent="keys/jump"]
+margin_right = 224.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Jump"
+
+[node name="button" type="Button" parent="keys/jump"]
+margin_left = 228.0
+margin_right = 452.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+text = "Space"
+
+[node name="boost" type="HBoxContainer" parent="keys"]
+margin_top = 50.0
+margin_right = 452.0
+margin_bottom = 70.0
+
+[node name="label" type="Label" parent="keys/boost"]
+margin_right = 224.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Boost"
+
+[node name="button" type="Button" parent="keys/boost"]
+margin_left = 228.0
+margin_right = 452.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+text = "Z"
+
+[node name="graphics" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 80.0
+margin_right = -40.0
+margin_bottom = -40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="title" type="Label" parent="graphics"]
+margin_right = 452.0
+margin_bottom = 14.0
+text = "Graphics"
+
+[node name="seperator" type="HSeparator" parent="graphics"]
+margin_top = 18.0
+margin_right = 452.0
+margin_bottom = 22.0
+
+[node name="lights" type="HBoxContainer" parent="graphics"]
+margin_top = 26.0
+margin_right = 452.0
+margin_bottom = 46.0
+
+[node name="label" type="Label" parent="graphics/lights"]
+margin_right = 224.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Lights"
+
+[node name="options" type="OptionButton" parent="graphics/lights"]
+margin_left = 228.0
+margin_right = 452.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "High"
+items = [ "High", null, false, 0, null, "Medium", null, false, 1, null, "Low", null, false, 2, null ]
+selected = 0
+

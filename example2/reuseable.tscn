@@ -1,0 +1,86 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://example2/particle.png" type="Texture" id=1]
+[ext_resource path="res://example2/reuseable_particles.gd" type="Script" id=2]
+
+
+
+
+[sub_resource type="Gradient" id=1]
+
+offsets = PoolRealArray( 0, 0.234568, 0.753086, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 0.296875, 0.271362, 0.271362, 1, 0.144531, 0.137756, 0.137756, 0.806452, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=2]
+
+gradient = SubResource( 1 )
+width = 64
+
+[sub_resource type="ParticlesMaterial" id=3]
+
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, -98, 0 )
+initial_velocity = 10.0
+angular_velocity = 7.56701e-44
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.3
+scale_random = 0.1
+color_ramp = SubResource( 2 )
+
+[sub_resource type="CanvasItemMaterial" id=4]
+
+blend_mode = 1
+
+[sub_resource type="Gradient" id=5]
+
+offsets = PoolRealArray( 0, 0.283951, 0.790123, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.806452, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=6]
+
+gradient = SubResource( 5 )
+width = 64
+
+[sub_resource type="ParticlesMaterial" id=7]
+
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, -49, 0 )
+initial_velocity = 40.0
+angular_velocity = 7.56701e-44
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping = 7.0
+scale = 0.6
+scale_random = 0.1
+color_ramp = SubResource( 6 )
+
+[sub_resource type="CircleShape2D" id=8]
+
+radius = 30.0
+
+[node name="player" type="KinematicBody2D"]
+
+[node name="particles_smoke" type="Particles2D" parent="."]
+modulate = Color( 0.46875, 0.198312, 0.10437, 1 )
+amount = 64
+draw_order = 1
+process_material = SubResource( 3 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="particles" type="Particles2D" parent="."]
+modulate = Color( 0.46875, 0.198312, 0.10437, 1 )
+material = SubResource( 4 )
+amount = 64
+lifetime = 0.8
+draw_order = 1
+process_material = SubResource( 7 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource( 8 )
+
